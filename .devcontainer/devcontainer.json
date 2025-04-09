@@ -2,10 +2,9 @@
   "name": "Azure Chat Solution Accelerator powered by Azure Open AI Service",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
-
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {
+    "ghcr.io/devcontainers/features/common-utils": {
       "installZsh": true,
       "configureZshAsDefaultShell": true,
       "installOhMyZsh": true,
@@ -15,22 +14,21 @@
       "userUid": "automatic",
       "userGid": "automatic"
     },
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker": {
       "moby": false,
       "installDockerBuildx": true,
       "version": "latest",
       "dockerDashComposeVersion": "v2"
     },
-    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
+    "ghcr.io/devcontainers-extra/features/zsh-plugins": {
       "plugins": "ssh-agent npm zsh-syntax-highlighting zsh-autosuggestions",
       "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions https://github.com/zsh-users/zsh-syntax-highlighting"
     },
-    "ghcr.io/devcontainers/features/azure-cli:1": {
+    "ghcr.io/devcontainers/features/azure-cli": {
       "installBicep": true
     },
-    "ghcr.io/azure/azure-dev/azd:0.1.0": {}
+    "ghcr.io/azure/azure-dev/azd:latest": {}
   },
-
   // Configure tool-specific properties.
   "customizations": {
     // Configure properties specific to VS Code.
@@ -38,12 +36,15 @@
       "settings": {
         "files.insertFinalNewline": true
       },
-      "extensions": ["shardulm94.trailing-spaces"]
+      "extensions": [
+        "shardulm94.trailing-spaces"
+      ]
     }
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [3000]
-
+  "forwardPorts": [
+    3000
+  ]
   // Use 'portsAttributes' to set default properties for specific forwarded ports.
   // More info: https://containers.dev/implementors/json_reference/#port-attributes
   // "portsAttributes": {
@@ -52,10 +53,8 @@
   // 		"onAutoForward": "notify"
   // 	}
   // },
-
   // Use 'postCreateCommand' to run commands after the container is created.
   // "postCreateCommand": "mkdir ~/.ssh",
-
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
 }

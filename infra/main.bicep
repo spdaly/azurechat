@@ -3,11 +3,11 @@ targetScope = 'subscription'
 // Activates/Deactivates Authentication using keys. If true it will enforce RBAC using managed identities
 @allowed([true, false])
 @description('Enables/Disables Authentication using keys. If true it will enforce RBAC using managed identity and disable key auth on backend resouces')
-param disableLocalAuth bool
+param disableLocalAuth bool = false
 
 @allowed([false, true])
 @description('Enables/Disables Private Endpoints for backend Azure resources. If true, it will create a virtual network and subnets to host the private endpoints.')
-param usePrivateEndpoints bool
+param usePrivateEndpoints bool = true
 
 @minLength(1)
 @maxLength(64)
