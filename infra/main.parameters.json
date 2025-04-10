@@ -1,14 +1,87 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "disableLocalAuth": {
+      "value": false
+    },
+    "usePrivateEndpoints": {
+      "value": true
+    },
+    "openAISku": {
+      "value": "S0"
+    },
+    "openAIApiVersion": {
+      "value": "2025-03-01-preview"
+    },
+    "chatGptDeploymentCapacity": {
+      "value": 1
+    },
+    "chatGptDeploymentName": {
+      "value": "gpt-4o"
+    },
+    "chatGptModelName": {
+      "value": "gpt-4o"
+    },
+    "chatGptModelVersion": {
+      "value": "2024-05-13"
+    },
+    "embeddingDeploymentName": {
+      "value": "embedding"
+    },
+    "embeddingDeploymentCapacity": {
+      "value": 120
+    },
+    "embeddingModelName": {
+      "value": "text-embedding-ada-002"
+    },
+    "dalleDeploymentCapacity": {
+      "value": 1
+    },
+    "dalleDeploymentName": {
+      "value": "dall-e-3"
+    },
+    "dalleModelName": {
+      "value": "dall-e-3"
+    },
+    "dalleApiVersion": {
+      "value": "2023-12-01-preview"
+    },
+    "formRecognizerSkuName": {
+      "value": "S0"
+    },
+    "searchServiceIndexName": {
+      "value": "azure-chat"
+    },
+    "searchServiceSkuName": {
+      "value": "standard"
+    },
+    "storageServiceImageContainerName": {
+      "value": "images"
+    },
+    "resourceGroupName": {
+      "value": "rg-uasi-demo"
+    },
+    "privateEndpointVNetPrefix": {
+      "value": "192.168.0.0/16"
+    },
+    "privateEndpointSubnetAddressPrefix": {
+      "value": "192.168.0.0/24"
+    },
+    "appServiceBackendSubnetAddressPrefix": {
+      "value": "192.168.1.0/24"
+    },
     "name": {
-      "value": "${AZURE_ENV_NAME=azurechat-solution}"
+      "value": "azurechat-solution"
     },
     "location": {
-      "value": "${AZURE_LOCATION}"
+      "value": "eastus2"
     },
-    "openAILocation": {},
-    "dalleLocation": {}
+    "openAILocation": {
+      "value": "eastus2"
+    },
+    "dalleLocation": {
+      "value": "swedencentral"
+    }
   }
 }
