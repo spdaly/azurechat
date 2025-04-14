@@ -91,7 +91,10 @@ param privateEndpointVNetPrefix string = '192.168.0.0/16'
 param privateEndpointSubnetAddressPrefix string = '192.168.0.0/24'
 param appServiceBackendSubnetAddressPrefix string = '192.168.1.0/24'
 
-var resourceToken = toLower(uniqueString(subscription().id, name, location))
+@description('Unique identifier for resource token generation.')
+param uniqueGuid string = newGuid()
+
+var resourceToken = toLower(uniqueString(subscription().id, name, location, uniqueGuid))
 var tags = { 'azd-env-name': name }
 
 // Organize resources in a resource group

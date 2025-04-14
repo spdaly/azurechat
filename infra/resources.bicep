@@ -506,7 +506,7 @@ resource llmdeployment 'Microsoft.CognitiveServices/accounts/deployments@2023-05
     sku: contains(deployment, 'sku')
       ? deployment.sku
       : {
-          name: 'Standard'
+          name: 'GlobalStandard'
           capacity: deployment.capacity
         }
   }
